@@ -43,9 +43,24 @@
                 <textarea class="textinput" id="i5vyy-2" placeholder="Message"></textarea>
               </div>
             </div>
-            <a class="send" href="#" id="w-c-s-bgc_p-1-dm-id">
-              Send
-            </a>
+              <a class="send" href="#" id="w-c-s-bgc_p-1-dm-id" onclick="clearInputFields()">Send</a>
+              <a class="send" href="{% url 'home'%}" >Go back</a>
+<script>
+function clearInputFields() {
+  // Clear input boxes
+  var inputBoxes = document.querySelectorAll('input, textarea');
+  for (var i = 0; i < inputBoxes.length; i++) {
+    inputBoxes[i].value = '';
+  }
+
+  // Display popup message
+  alert('Thank you for reaching out to us.');
+}
+</script>
+
+
+
+
           </div>
         </form>
       </div>

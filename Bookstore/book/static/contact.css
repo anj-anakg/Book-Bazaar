@@ -10,7 +10,7 @@
 /* Body styles */
 body{
   font-family: Arial, sans-serif;
-  background-color: #EC595F;
+  background-color: #EEDCB8;
 }
 
 /* Container styles */
@@ -98,7 +98,7 @@ body{
 .send {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #EC595F;
+  background-color: Brown;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;

@@ -15,11 +15,12 @@
 
     <title>Title</title>
 </head>
+
 <body>
 <!--NAV BAR-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand">Inkwell Books
+        <a href="#" class="navbar-brand">Book Bazaar
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book"
                  viewBox="0 0 16 16">
                 <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
@@ -32,14 +33,6 @@
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link active">Home</a>
                 <a href="#" class="nav-item nav-link">New Arrivals</a>
-                <!--                <div class="nav-item dropdown">-->
-                <!--                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Book</a>-->
-                <!--                    <div class="dropdown-menu">-->
-                <!--                        <a href="#" class="dropdown-item">Fiction</a>-->
-                <!--                        <a href="#" class="dropdown-item">Biography</a>-->
-                <!--                        <a href="#" class="dropdown-item">Lifestyle</a>-->
-                <!--                    </div>-->
-                <!--                </div>-->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Book</a>
                     <div class="dropdown-menu">
@@ -48,21 +41,25 @@
                         <a href="#" class="dropdown-item">Lifestyle</a>
                     </div>
                 </div>
-
             </div>
+            <form class="d-flex" action="{% url 'search_results' %}" method="get">
+                 <div class="input-group">
+                     <input name="q" type="text" class="form-control" placeholder="Search" autocomplete="on">
+                     <button type="submit" class="btn btn-secondary search-btn"><i class="bi bi-search"></i></button>
+                 </div>
+            </form>
             <div class="dropdown">
-                <span>
-                    <i class="bi bi-person-fill"></i>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-person-fill" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                    </svg>
-                </span>
+            <span>
+                <i class="bi bi-person-fill"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                </svg>
+            </span>
                 <div class="dropdown-content">
-                    <a class="dropdown" href="{% url 'logout' %}">
-                        {{user}}
-                    </a>
                     {% if user.is_authenticated %}
+                    <a class="dropdown" href="{% url 'logout' %}">
+                        {{ user.username }}
+                    </a>
                     <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
                     {% else %}
                     <a class="dropdown-item" href="{% url 'login' %}">Login</a>
@@ -70,35 +67,12 @@
                     {% endif %}
                 </div>
             </div>
-
-            <form class="d-flex" action="{% url 'search_results' %}" method="get">
-                <div class="input-group">
-                    <input name="q" type="text" class="form-control" placeholder="Search" autocomplete="on">
-                    <button type="submit" class="btn btn-secondary"><i class="bi-search"></i></button>
-                </div>
-            </form>
-            <!--            miss dropdown-->
-            <!--            <div class="dropdown">-->
-            <!--      <a class="btn btn-secondary dropdown-toggle" href="{% url 'logout' %}" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">-->
-            <!--        {{user}}-->
-            <!--      </a>-->
-            <!--        {% if user.is_authenticated %}-->
-
-            <!--      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
-            <!--        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>-->
-            <!--           {% else %}-->
-            <!--        <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>-->
-            <!--        <li><a class="dropdown-item" href="{% url 'signup' %}">Signup</a></li>-->
-            <!--          {% endif %}-->
-            <!--      </ul>-->
-            <!--    </div>-->
         </div>
     </div>
-</nav>
+ </nav>
 
 <!--Header-->
-
-<div style="background: url('{% static '360_F.jpg' %}')" class="header">
+  <div style="background: url('{% static 'Header_new.jpg' %}')" class="header">
     <h1 class="display-6 font-weight-bold text-white">..</h1>
     <div class="container mt-5 card-container">
         <h5 class="display-4  text-white"></h5>
@@ -106,81 +80,57 @@
         <p class="font-italic"></p>
         <h5 class="display-4  text-white"></h5>
         <h5 class="display-4  text-white"></h5>
-        <a href="{% url 'books' %}" role="button" class="btn btn-primary px-5">Shop Now</a>
     </div>
-</div>
+  </div>
+  <a href="{% url 'books' %}" role="button" class="btn btn-primary">Shop Now</a>
 
 
-<!--section-->
-<section>
-    <div class="container mt-5">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            {% for i in books %}
-            <div class="col mt-3">
-                <div class="card h-100 custom-card">
-                    <img src="{{i.image_url}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{i.title}}</h5>
-                        <h6 class="card-title">{{i.author}}</h6>
-
-                        <p class="card-text">Rs/-{{i.price}}</p>
-                        <a href="{% url 'details' i.id%}" class="btn btn-primary">View</a>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="{% url 'about' %}">about us</a></li>
+                        <!--  	 				<li><a href="#">our services</a></li>-->
+                        <!--  	 				<li><a href="#">privacy policy</a></li>-->
+                        <!--  	 				<li><a href="#">affiliate program</a></li>-->
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="{% url 'contact' %}">Get in Touch</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
-    </div>
+    </footer>
 
-<!--Footer-->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="{% url 'about' %}">about us</a></li>
-                    <!--  	 				<li><a href="#">our services</a></li>-->
-                    <!--  	 				<li><a href="#">privacy policy</a></li>-->
-                    <!--  	 				<li><a href="#">affiliate program</a></li>-->
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Get help</h4>
-                <ul>
-                    <li><a href="{% url 'contact' %}">Get in Touch</a></li>
-                    <li><a href="#">shipping</a></li>
-                    <li><a href="#">returns</a></li>
-                    <li><a href="#">order status</a></li>
-                    <li><a href="#">payment options</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>online shop</h4>
-                <ul>
-                    <li><a href="#">watch</a></li>
-                    <li><a href="#">bag</a></li>
-                    <li><a href="#">shoes</a></li>
-                    <li><a href="#">dress</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>follow us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Gqlu9tYc12KD9Ph4kMFz2lKvVUX4B7fIUV21xGzW3xhwZUfRMNwP/YzyFSvawjuZ"
-        crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-Gqlu9tYc12KD9Ph4kMFz2lKvVUX4B7fIUV21xGzW3xhwZUfRMNwP/YzyFSvawjuZ" crossorigin="anonymous"></script>
 
 </body>
 </html>

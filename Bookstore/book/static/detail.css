@@ -1,0 +1,38 @@
+/* Card Details */
+.card-details {
+      max-width: 840px;
+}
+
+.card-details .card-img {
+  card-img-left
+  height: 100%;
+  object-fit:cover;
+
+}
+
+.card-details .card-body {
+  padding: 20px;
+}
+
+.card-details .card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-details .card-text {
+  margin-bottom: 10px;
+}
+
+.card-details .btn-outline-success {
+  margin-top: 10px;
+}
+
+.card-details .text-danger {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-details .btn-outline-info {
+  margin-top: 10px;
+}

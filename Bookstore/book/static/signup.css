@@ -1,0 +1,38 @@
+/* signup.css */
+body {
+  background-image: url("34322.jpg");
+  background-size: 60% auto;
+}
+
+form {
+  max-width: 450px;
+  margin: 150px auto;
+  padding: 20px;
+  background-color: #fbb638;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+

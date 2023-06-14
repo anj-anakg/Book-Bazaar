@@ -1,0 +1,52 @@
+body {
+  background-color: #f2f2f2;
+  background-image:url("07303.jpg");
+  background-size: 800px 700px;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 150px;
+  background-color: #69A2CD;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-primary{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-link{
+  background-color: transparent;
+
+}
+
+.btn-primary:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+

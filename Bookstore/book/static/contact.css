@@ -1,0 +1,111 @@
+/* contact.css */
+
+/* Reset default styles */
+*{
+  box-sizing: border-box;
+  margin: 7px;
+  padding: 0;
+}
+
+/* Body styles */
+body{
+  font-family: Arial, sans-serif;
+  background-color: #EC595F;
+}
+
+/* Container styles */
+.new_home_web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.big-container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  width: 500px;
+}
+
+.textContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.topHead {
+  margin-bottom: 10px;
+}
+
+.text-blk {
+  color: #333;
+  font-size: 18px;
+}
+
+.orangeText {
+  color: orange;
+}
+
+.orangeLine {
+  height: 2px;
+  background-color:#EC595F ;
+}
+
+.subHeading {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* Form styles */
+.form-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-block {
+  width: 100%;
+}
+
+.left4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input,
+.textinput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.input:focus,
+.textinput:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.lastPhone {
+  margin-bottom: 20px;
+}
+
+.send {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #EC595F;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.send:hover {
+  background-color: #EC595F;
+}

@@ -81,9 +81,31 @@ def add_to_cart(request, book_id):
     if not created:
         cart_item.quantity += 1
         cart_item.save()
-    cart_item.total_price += Decimal(str(book.price))
+    cart_obj.total_price += Decimal(str(book.price))
+
     cart_obj.save()
     return redirect('mycart')
+
+
+@login_required()
+def remove_from_cart(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    cart_qs = Cart.objects.filter(user=request.user)
+    if cart_qs.exists():
+        cart_obj = cart_qs.first()
+        cart_item_qs = CartItem.objects.filter(book=book, cart=cart_obj)
+        if cart_item_qs.exists():
+            cart_item = cart_item_qs.first()
+            if cart_item.quantity > 1:
+                cart_item.quantity -= 1
+                cart_item.save()
+            else:
+                cart_item.delete()
+            cart_obj.total_price -= Decimal(str(book.price))
+            cart_obj.save()
+    return redirect('mycart')
+
+
 
 
 def about(request):

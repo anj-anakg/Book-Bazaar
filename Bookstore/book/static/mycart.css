@@ -1,9 +1,8 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');*/
 body{
             margin: 0;
             padding: 0;
 }
-navbar{
+.navbar{
             background-color: #f8f8f8;
 }
 .navbar-brand{
@@ -70,43 +69,37 @@ navbar{
             z-index: 1;
 }
 
-.footer {
-            background-color: #f8f8f8;
-            padding: 60px 0;
-            text-align: center;
+
+.container-fluid {
+  margin-top: 20px;
 }
 
-.container {
-            display: flex;
-            justify-content: center;
+h2 {
+  margin-bottom: 20px;
 }
 
-.row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
+.card-img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
 }
 
-.container {
-            display: flex;
-            justify-content: center;
+.list-group {
+  margin-top: 20px;
 }
 
-.footer {
-            background-color: #f8f8f8;
-            padding: 60px 0;
-            text-align: center;
-}
-a{
-            color:green;
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-.footer-col {
-            width: 33%;
-            padding: 0 15px;
-}
-.footer-col h4 {
-            color: Green;
+.btn {
+  margin-top: 10px;
 }
 
-
+.total-price {
+  margin-top: 20px;
+  font-weight: bold;
+}

@@ -26,8 +26,8 @@ class Cart(models.Model):
     items = models.ManyToManyField(Book)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    def __str__(self):
-        return self.total_price
+    # def __str__(self):
+    #     return self.total_price
 
 
 class CartItem(models.Model):
@@ -36,7 +36,7 @@ class CartItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return f'{self.quantity} * {self.book}'
+        return f'{self.quantity} x {self.book}'
 
     @property
     def total_price(self):
